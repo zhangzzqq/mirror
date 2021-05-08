@@ -8,6 +8,7 @@ import android.widget.RadioGroup;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import com.alipay.mobile.antui.dialog.AUProgressDialog;
 import com.databox.mirror.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_style3);
         initView();
+
+
     }
 
     private void initView() {
@@ -40,12 +43,6 @@ public class MainActivity extends AppCompatActivity {
         // 默认显示第一个
         getSupportFragmentManager().beginTransaction().add(R.id.fragment_container,
                 mFragmentSparseArray.get(R.id.today_tab)).commit();
-        findViewById(R.id.sign_iv).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                startActivity(new Intent(Style3Activity.this, SignActivity.class));
-            }
-        });
     }
 
 }
