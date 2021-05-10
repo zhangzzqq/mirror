@@ -3,6 +3,11 @@ buildscript {
     ext.mpaas_artifact = "mpaas-baseline"
     ext.mpaas_baseline = "10.1.68-28"
     repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
+        maven { url 'http://maven.aliyun.com/nexus/content/repositories/google' }
+        maven { url 'http://maven.aliyun.com/nexus/content/repositories/gradle-plugin' }
+
         google()
         jcenter()
         maven {
@@ -25,6 +30,11 @@ buildscript {
 
 allprojects {
     repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
+        maven { url 'http://maven.aliyun.com/nexus/content/repositories/google' }
+        maven { url 'http://maven.aliyun.com/nexus/content/repositories/gradle-plugin' }
+
         google()
         jcenter()
         maven {
@@ -41,3 +51,19 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+ext {
+    versionCode = 1
+    versionName= '1.0'
+//    versionName_okserver = '2.0.5'
+//    versionName_okrx = '1.0.2'
+//    versionName_okrx2 = '2.0.2'
+
+    minSdkVersion = 19
+    appMinSdkVersion = 16
+    targetSdkVersion = 30
+    compileSdkVersion = 30
+    buildToolsVersion = '29.0.3'
+//    supportVersion = '25.3.1'
+}
+
