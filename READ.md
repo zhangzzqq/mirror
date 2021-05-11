@@ -1248,6 +1248,78 @@ style属性
 api
 https://commons.apache.org/proper/commons-lang/javadocs/api-release/index.html
 
-##
+##mpass 基础  antui （已经使用了腾讯的ui库，满足了项目需求，这个库可以不用，后面会删除）
+Native UI 组件（AntUI）
+https://help.aliyun.com/document_detail/87472.html?spm=a2c4g.11186623.6.563.7b027652VB2Emn
+
+## 项目中MVP改进版用法说明
+
+MVP用法说明
+
+1 先按照已有的模板写好activity contract presenter类
+
+2 写contract类
+接口View 中写ui逻辑
+接口Presenter中写业务逻辑
+
+3 写Activity（继承contract）
+oncreate()方法中声明对象 ：new TestHomePresenter(this);并在回调方法setPresenter
+中给Presenter对象赋值
+
+4 写Presenter（继承contract）
+
+5 已经写好了mvp代码
+
+约束参数模板：
+  public interface View extends BaseView<Presenter> {
+
+        Context getContext();
+        void initData();
+        void  homeWindow();
+        void offlinePackage();
+        void pluginTest();
+    }
+
+    public interface Presenter extends BasePresenter {
+        void getPermission();
+        void updateAllApp();
+        void initData();
+        void homeWindow();
+        void offlinePackage();
+        void pluginTest();
+        void startAppSettings();
+
+    }
+
+public class centernPeripheralActivity implements  centernPeripheralContract.View {
+
+    @Override
+    public void setPresenter(centernPeripheralContract.Presenter presenter) {
+
+    }
+
+}
+
+public class centernPeripheralContract {
+
+    public interface View extends BaseView<centernPeripheralContract.Presenter> {
+
+    }
+
+    public interface Presenter extends BasePresenter {
+
+
+    }
+
+}
+
+public class centernPeripheralPresenter implements centernPeripheralContract.Presenter {
+
+
+}
+
+
+
+
 
 

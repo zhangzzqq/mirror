@@ -1,15 +1,14 @@
-package com.databox.mirror.function;
+package com.databox.mirror.function.main;
 
 import android.os.Bundle;
 import android.util.SparseArray;
-import android.view.View;
 import android.widget.RadioGroup;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import com.alipay.mobile.antui.dialog.AUProgressDialog;
 import com.databox.mirror.R;
+import com.databox.mirror.function.main.BlankFragment;
 
 public class MainActivity extends AppCompatActivity {
 

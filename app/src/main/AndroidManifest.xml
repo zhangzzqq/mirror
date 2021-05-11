@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.databox.mirror">
 
     <application
@@ -10,13 +11,18 @@
         android:supportsRtl="true"
         android:name=".base.BaseApplication"
         android:theme="@style/Theme.mirror">
-        <activity android:name="com.databox.mirror.function.MainActivity">
+        <activity android:name=".function.login_note.LoginNoteActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+<!--        <activity android:name=".function.login.LoginActivity"/>-->
+        <activity android:name="com.databox.mirror.function.main.MainActivity"
+            tools:ignore="DuplicateActivity" />
+
     </application>
 
 </manifest>
