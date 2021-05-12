@@ -9,18 +9,16 @@ import android.view.ViewGroup;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.databox.mirror.common.notification.INotification;
-import com.databox.mirror.common.notification.ToastAudioNotification;
 
 
 public abstract class BaseFragment extends Fragment implements IBaseFragment {
 
     private static final boolean DEBUG = false;
-    private INotification notification;
+//    private INotification notification;
 
-    public INotification getNotification() {
-        return notification;
-    }
+//    public INotification getNotification() {
+//        return notification;
+//    }
 
     @Override
     public void onVisible() {
@@ -38,7 +36,7 @@ public abstract class BaseFragment extends Fragment implements IBaseFragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        notification = new ToastAudioNotification(getContext());
+//        notification = new ToastAudioNotification(getContext());
         parseIntent();
     }
 

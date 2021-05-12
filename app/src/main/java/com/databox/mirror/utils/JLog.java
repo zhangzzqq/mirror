@@ -3,9 +3,18 @@ package com.databox.mirror.utils;
 
 import com.databox.mirror.common.Constant;
 import com.orhanobut.logger.Logger;
+import com.orhanobut.logger.AndroidLogAdapter;
+import com.orhanobut.logger.DiskLogAdapter;
+import com.orhanobut.logger.FormatStrategy;
+import com.orhanobut.logger.PrettyFormatStrategy;
 
-import com.orhanobut.logger.Logger;
-
+/**
+ * @Author steven
+ * @Description  log工具类
+ * @Date  2021/5/12 13:34
+ * @Param
+ * @return
+ **/
 public class JLog {
 
     public static final int DEBUG = 3;
@@ -15,6 +24,32 @@ public class JLog {
     public static final int VERBOSE = 2;
     public static final int WARN = 5;
 
+    public static  void init(String tag) {
+
+        FormatStrategy formatStrategy = PrettyFormatStrategy.newBuilder()
+                .showThreadInfo(false)  // (Optional) Whether to show thread info or not. Default true
+                .methodCount(2)         // (Optional) How many method line to show. Default 2
+                .methodOffset(5)        // (Optional) Hides internal method calls up to offset. Default 5
+//                .logStrategy(customLog) // (Optional) Changes the log strategy to print out. Default LogCat
+                .tag(tag)   // (Optional) Global tag for every log. Default PRETTY_LOGGER
+                .build();
+        Logger.addLogAdapter(new DiskLogAdapter());//保存的日志文件地址是 根目录/logger/
+        Logger.addLogAdapter(new AndroidLogAdapter(formatStrategy));
+
+        Logger.addLogAdapter(new AndroidLogAdapter() {
+            @Override public boolean isLoggable(int priority, String tag) {
+                return Constant.IS_DEBUG;
+//                return BuildConfig.DEBUG;
+            }
+        });
+//        Logger.addLogAdapter(new AndroidLogAdapter(formatStrategy));
+
+
+//        Logger.addLogAdapter(new AndroidLogAdapter());
+
+
+//        return Logger.init(tag);
+    }
 
 
     public static void log(int priority, String tag, String message, Throwable throwable) {

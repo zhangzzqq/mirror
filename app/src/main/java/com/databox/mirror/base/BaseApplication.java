@@ -5,6 +5,9 @@ import android.content.Context;
 
 import androidx.multidex.MultiDex;
 
+import com.androidnetworking.AndroidNetworking;
+import com.databox.mirror.common.Constant;
+import com.databox.mirror.utils.JLog;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheEntity;
 import com.lzy.okgo.cache.CacheMode;
@@ -41,8 +44,13 @@ public class BaseApplication extends Application {
         super.onCreate();
         context = getApplicationContext();
         MultiDex.install(this);
-
+        // 初始化日志类
+        JLog.init(Constant.DEFAULT_TAG);
+        //初始化网络请求工具类
         initOkGo();
+
+        AndroidNetworking.initialize(getApplicationContext());
+
 
     }
 

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resource xmlns:android="http://schemas.android.com/apk/res/android">
+    <external-path
+        name="images"
+        path="./" />
+    <paths>
+        <external-files-path
+            name="download"
+            path="${applicationId}/downloads"/>
+        <external-path
+            name="download_sdcard"
+            path="ExtDataTunnel/files/${applicationId}/downloads"/>
+    </paths>
+
+</resource>

@@ -19,12 +19,10 @@ public class LoginPassWordContract {
 
     public interface Presenter extends BasePresenter {
 
-        void goIntoOfflinePackage();
-        void setProgressBar(boolean isShow);
-        void createWindow();
-        void closeWindow();
-        void setWindowProgressBar(boolean isShow);
-
+        void userLogin(String phone,String password);
+        void riderLogin(String phone,String password);
+        void merchantLogin(String phone,String password);
+        void getVerificationcode (String phone,int timeOut,int type);
     }
 
 
