@@ -1,5 +1,6 @@
 package com.databox.mirror.function.main;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.SparseArray;
 import android.widget.RadioGroup;
@@ -9,7 +10,15 @@ import androidx.fragment.app.Fragment;
 
 import com.databox.mirror.R;
 import com.databox.mirror.function.main.BlankFragment;
-
+/**
+ * @Author steven
+ * @Description  MainActivity  用户，商家，骑手的不同
+ * 可以选择用mFragmentSparseArray加载不同的fragment
+ *
+ * @Date  2021/5/12 22:56
+ * @Param
+ * @return
+ **/
 public class MainActivity extends AppCompatActivity {
 
     private RadioGroup mTabRadioGroup;
@@ -42,6 +51,12 @@ public class MainActivity extends AppCompatActivity {
         // 默认显示第一个
         getSupportFragmentManager().beginTransaction().add(R.id.fragment_container,
                 mFragmentSparseArray.get(R.id.today_tab)).commit();
+    }
+
+
+    public static void startActivity(Context context) {
+//        Intent intent = new Intent(context, LoginNoteActivity.class);
+//        context.startActivity(intent);
     }
 
 }

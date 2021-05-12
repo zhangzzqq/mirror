@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.databox.mirror">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:name=".base.BaseApplication"
-        android:theme="@style/Theme.mirror">
+        android:theme="@style/Theme.mirror"
+        android:networkSecurityConfig="@xml/react_native_config"
+        tools:targetApi="n">
 
         <activity android:name=".function.login_note.LoginNoteActivity">
             <intent-filter>

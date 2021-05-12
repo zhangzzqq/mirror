@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -13,6 +14,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.databox.mirror.R;
 import com.databox.mirror.base.BaseActivity;
+import com.databox.mirror.model.IdentityType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,8 +30,9 @@ public class LoginNoteActivity extends BaseActivity implements LoginNoteContract
     private ViewPager viewPager;
     private LoginNoteContract.Presenter mPresenter;
     private ProgressBar mProgressBar;
-    private TextView tvPhone;
-    private TextView tvVerificationCode;
+    private EditText eTPhone;
+    private EditText eTVerificationCode;
+    private TextView tvGetVerificationCode;
     private TextView tvRegister;
     private TextView tvPasswordLogin;
     private TextView btnLogin;
@@ -46,14 +49,14 @@ public class LoginNoteActivity extends BaseActivity implements LoginNoteContract
 
     private void initView() {
 
-        tvPhone = findViewById(R.id.tv_phone);
-        tvVerificationCode = findViewById(R.id.tv_verificationcode);
+        eTPhone = findViewById(R.id.et_phone);
+        eTVerificationCode = findViewById(R.id.et_verificationcode);
+        tvGetVerificationCode = findViewById(R.id.tv_get_verification_code);
         tvRegister = findViewById(R.id.tv_register);
         tvPasswordLogin = findViewById(R.id.tv_password_login);
         btnLogin = findViewById(R.id.btn_login);
 
-        tvPhone.setOnClickListener(this);
-        tvVerificationCode.setOnClickListener(this);
+        tvGetVerificationCode.setOnClickListener(this);
         tvRegister.setOnClickListener(this);
         tvPasswordLogin.setOnClickListener(this);
         btnLogin.setOnClickListener(this);
@@ -73,9 +76,14 @@ public class LoginNoteActivity extends BaseActivity implements LoginNoteContract
 
                 break;
 
+            case R.id.tv_get_verification_code:
+                mPresenter.getVerificationcode(eTPhone.getText().toString(),
+                        5*60*1000, IdentityType.login.getValue());
+                break;
+
             case R.id.btn_login:
-                mPresenter.userLogin(tvPhone.getText().toString(),
-                        tvVerificationCode.getText().toString());
+                mPresenter.userLogin(eTPhone.getText().toString(),
+                        eTVerificationCode.getText().toString());
                 break;
 
         }

@@ -1318,14 +1318,17 @@ public class centernPeripheralPresenter implements centernPeripheralContract.Pre
 }
 
 
-## OkGo
-## OkGo - 3.0 震撼来袭, 一个基于okhttp的标准RESTful风格的网络框架
-https://github.com/jeasonlzy/okhttp-OkGo
-响应拦截类
-public class HttpLoggingInterceptor implements Interceptor
-打算在这个类 HttpLoggingInterceptorImpl 写拦截
+## OkGo  弃用 返回结果封装的非常不好，不好用
 
 
 
+## JLog
+日志工具类，拥有磁盘缓存功能，输出路径：内部存储/logger。
 
+## Fast-Android-Networking
+https://github.com/amitshekhariitbhu/Fast-Android-Networking
+
+
+##SharedPreferences工具类
+ SPUtils.getInstance().put("token",token);
 

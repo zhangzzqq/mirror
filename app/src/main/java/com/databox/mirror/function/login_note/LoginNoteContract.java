@@ -22,6 +22,10 @@ public class LoginNoteContract {
       void userLogin(String phone,String verificationCode);
       void riderLogin(String phone,String verificationCode);
       void merchantLogin(String phone,String verificationCode);
+      void getVerificationcode (String phone,int timeOut,int type);
+
+
+
 
 
 

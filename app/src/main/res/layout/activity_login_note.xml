@@ -20,7 +20,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="客户端"
-                android:textColor="@color/au_button_textcolor_black"
+                android:textColor="@color/black"
                 android:textSize="18sp" />
 
             <View
@@ -45,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:text="商家端"
-                android:textColor="@color/au_button_textcolor_black"
+                android:textColor="@color/black"
                 android:textSize="18sp" />
 
             <View
@@ -70,7 +70,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:text="骑手端"
-                android:textColor="@color/au_button_textcolor_black"
+                android:textColor="@color/black"
                 android:textSize="18sp" />
 
             <View
@@ -122,7 +122,7 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/tv_phone"
+            android:id="@+id/et_phone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@null"
@@ -141,7 +141,7 @@
             android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/tv_verificationcode"
+                android:id="@+id/et_verificationcode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@null"
