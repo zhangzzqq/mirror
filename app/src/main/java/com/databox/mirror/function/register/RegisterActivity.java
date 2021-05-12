@@ -5,7 +5,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import androidx.viewpager.widget.ViewPager;
 
@@ -21,9 +23,7 @@ import java.util.List;
  * @Date  2021/5/10 15:10
  **/
 public class RegisterActivity extends BaseActivity implements RegisterContract.View {
-    /**
-     * 存放图片数组
-     */
+
     private List mPageList = new ArrayList();
     private ViewPager viewPager;
     private RegisterContract.Presenter mPresenter;
@@ -40,6 +40,10 @@ public class RegisterActivity extends BaseActivity implements RegisterContract.V
     }
 
     private void initView() {
+       TextView tvPhone =  findViewById(R.id.tv_phone);
+       EditText etVerificationCode =  findViewById(R.id.et_verificationcode);
+       TextView tvGetVerificationCode =  findViewById(R.id.tv_get_verification_code);
+       EditText etInputPassord =  findViewById(R.id.et_input_password);
 
     }
 
@@ -62,11 +66,7 @@ public class RegisterActivity extends BaseActivity implements RegisterContract.V
 
     @Override
     public void showProgressBar(boolean isShow) {
-        if (isShow) {
-            mProgressBar.setVisibility(View.VISIBLE);
-        } else {
-            mProgressBar.setVisibility(View.GONE);
-        }
+
     }
 
     @Override

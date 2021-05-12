@@ -19,11 +19,11 @@ public class LoginNoteContract {
 
     public interface Presenter extends BasePresenter {
 
-        void goIntoOfflinePackage();
-        void setProgressBar(boolean isShow);
-        void createWindow();
-        void closeWindow();
-        void setWindowProgressBar(boolean isShow);
+      void userLogin(String phone,String verificationCode);
+      void riderLogin(String phone,String verificationCode);
+      void merchantLogin(String phone,String verificationCode);
+
+
 
     }
 

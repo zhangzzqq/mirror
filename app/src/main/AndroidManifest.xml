@@ -11,15 +11,17 @@
         android:supportsRtl="true"
         android:name=".base.BaseApplication"
         android:theme="@style/Theme.mirror">
+
         <activity android:name=".function.login_note.LoginNoteActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-<!--        <activity android:name=".function.login.LoginActivity"/>-->
+        <activity android:name=".function.register.RegisterActivity"/>
+        <activity android:name=".function.login_passward.LoginPassWordActivity"/>
+<!--    <activity android:name=".function.login_rider.LoginRiderActivity"/>-->
         <activity android:name="com.databox.mirror.function.main.MainActivity"
             tools:ignore="DuplicateActivity" />
 

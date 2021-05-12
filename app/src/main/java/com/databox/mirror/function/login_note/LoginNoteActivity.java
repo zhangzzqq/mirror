@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 
 import androidx.viewpager.widget.ViewPager;
@@ -18,17 +19,20 @@ import java.util.List;
 
 /**
  * @Author steven
- * @Description  登录页面
- * @Date  2021/5/10 15:10
+ * @Description 登录页面
+ * @Date 2021/5/10 15:10
  **/
-public class LoginNoteActivity extends BaseActivity implements LoginNoteContract.View {
-    /**
-     * 存放图片数组
-     */
-    private List mPageList = new ArrayList();
+public class LoginNoteActivity extends BaseActivity implements LoginNoteContract.View,
+        View.OnClickListener {
+
     private ViewPager viewPager;
     private LoginNoteContract.Presenter mPresenter;
     private ProgressBar mProgressBar;
+    private TextView tvPhone;
+    private TextView tvVerificationCode;
+    private TextView tvRegister;
+    private TextView tvPasswordLogin;
+    private TextView btnLogin;
 
 
     @Override
@@ -41,6 +45,40 @@ public class LoginNoteActivity extends BaseActivity implements LoginNoteContract
     }
 
     private void initView() {
+
+        tvPhone = findViewById(R.id.tv_phone);
+        tvVerificationCode = findViewById(R.id.tv_verificationcode);
+        tvRegister = findViewById(R.id.tv_register);
+        tvPasswordLogin = findViewById(R.id.tv_password_login);
+        btnLogin = findViewById(R.id.btn_login);
+
+        tvPhone.setOnClickListener(this);
+        tvVerificationCode.setOnClickListener(this);
+        tvRegister.setOnClickListener(this);
+        tvPasswordLogin.setOnClickListener(this);
+        btnLogin.setOnClickListener(this);
+
+
+    }
+
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.tv_register:
+
+                break;
+
+            case R.id.tv_password_login:
+
+                break;
+
+            case R.id.btn_login:
+                mPresenter.userLogin(tvPhone.getText().toString(),
+                        tvVerificationCode.getText().toString());
+                break;
+
+        }
     }
 
 
@@ -76,7 +114,6 @@ public class LoginNoteActivity extends BaseActivity implements LoginNoteContract
     }
 
 
-
     @Override
     protected void onStop() {
         super.onStop();
@@ -87,8 +124,6 @@ public class LoginNoteActivity extends BaseActivity implements LoginNoteContract
     protected void onDestroy() {
         super.onDestroy();
     }
-
-
 
 
 }

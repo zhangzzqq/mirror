@@ -8,5 +8,8 @@ package com.databox.mirror.common;
  **/
 public class Constant {
 
+    public static final String Url = "http://114.220.25.153:9189/v3/api-docs";
     public static final boolean  IS_DEBUG=true;
+
+
 }

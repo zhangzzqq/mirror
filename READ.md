@@ -1315,9 +1315,15 @@ public class centernPeripheralContract {
 
 public class centernPeripheralPresenter implements centernPeripheralContract.Presenter {
 
-
 }
 
+
+## OkGo
+## OkGo - 3.0 震撼来袭, 一个基于okhttp的标准RESTful风格的网络框架
+https://github.com/jeasonlzy/okhttp-OkGo
+响应拦截类
+public class HttpLoggingInterceptor implements Interceptor
+打算在这个类 HttpLoggingInterceptorImpl 写拦截
 
 
 
